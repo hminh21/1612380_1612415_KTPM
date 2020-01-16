@@ -1,0 +1,76 @@
+<div class="header-area">
+    {{> header-area}}
+</div> <!-- End header area -->
+
+<div class="site-branding-area">
+    {{>site-branding-area}}
+</div> <!-- End site branding area -->
+
+<div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 50px;">
+    {{>mainmenu}}
+</div>
+
+<!-- Page content -->
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            {{#if manufacturerObj}}
+                <div class="col-md-6" >
+                    <a href="manufacturer/{{manufacturerObj.id}}"><button class="btn btn-success">Giá giảm dần</button></a>
+                    <a href="manufacturer/asc/{{manufacturerObj.id}}"><button class="btn btn-success">Giá tăng dần</button></a>
+                </div>
+            {{else}}
+                {{#if categoryObj}}
+                    <div class="col-md-6">
+                        <a href="category/{{categoryObj.id}}"><button class="btn btn-success">Giá giảm dần</button></a>
+                        <a href="category/asc/{{categoryObj.id}}"><button class="btn btn-success">Giá tăng dần</button></a>
+                    </div>
+                {{else}}
+                    <div class="col-md-6">
+                        <a href="productList"><button class="btn btn-success">Giá giảm dần</button></a>
+                        <a href="productList/asc"><button class="btn btn-success">Giá tăng dần</button></a>
+                    </div>
+                {{/if}}
+            {{/if}}
+            </br>
+            </br>
+            </br>
+        </div>
+        <div class="row">
+            {{#each productList}}
+                <div class="col-md-4 col-sm-8">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                <a onclick="this.parentElement.submit()" style="color: black"><img style="width: 360px; height:270px" src="{{this.img1}}" alt=""></a>
+                            </form>
+                        </div>
+                        <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                            <a onclick="this.parentElement.submit()" style="color: black"><h2>{{this.name}}</h2></a>
+                        </form>
+                        <div class="product-carousel-price">
+                            <ins>{{formatCurrency this.price}}</ins>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+        {{>pagination}}
+    </div>
+</div>
+<!-- End page content -->
+
+
+<div class="footer-top-area">
+    {{>footer-top}}
+</div> <!-- End footer top area -->
+
+<div class="footer-bottom-area">
+    {{>footer-bot}}
+</div> <!-- End footer bottom area -->
+
+
+
+
+

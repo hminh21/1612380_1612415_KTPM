@@ -1,0 +1,28 @@
+<div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+    <ul class="pagination">
+        {{#ifCond 0 prevPages}}
+        <li class="paginate_button page-item ">
+                <a href="{{url}}?page=1" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link"><<</a>
+                </li>
+        {{/ifCond}}
+    <li class="paginate_button page-item "><a aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link" href="{{url}}?page={{prev}}">Previous</a></li>
+
+{{#forLoop url pageStart pageEnd}}
+            <li class="paginate_button page-item "></li><a href="{{url}}?page={{this}}" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">{{this}}</a> </li>
+
+{{/forLoop}}
+
+{{#ifCond next numPages}}
+    <li class="paginate_button page-item "><a aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link" href="{{url}}?page={{next}}">Next</a></li>
+{{/ifCond}}
+{{#ifCond nextPages numPages}}
+<li class="paginate_button page-item ">
+                <a href="{{url}}?page={{numPages}}" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">>></a>
+                </li>
+{{/ifCond}}
+
+  </ul>
+</div>
+
+        
+    

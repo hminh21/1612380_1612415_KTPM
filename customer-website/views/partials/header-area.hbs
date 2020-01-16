@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="user-menu">
+                <ul>
+                    {{#if login}}
+                        <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
+                        <li><a href="/orders"><i class="fa fa-list"></i>Các đơn hàng</a></li>
+                        <li><a href="/checkout"><i class="fa fa-money"></i> Thanh toán</a></li>
+                        <li><a href="/logout"><i class="fa fa-sign-out"></i> Đăng xuất</a></li>
+                    {{else}}
+                        <li><a href="/login"><i class="fa fa-sign-in"></i>Đăng nhập</a></li>
+                        <li><a href="/register"><i class="fa fa-user"></i>Đăng ký</a></li>
+                    {{/if}}
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--<div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown link
+    </a>
+
+    <div align="right" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+</div>-->

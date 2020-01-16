@@ -1,0 +1,175 @@
+
+<div class="header-area">
+    {{> header-area}}
+</div> <!-- End header area -->
+
+<div class="site-branding-area">
+    {{>site-branding-area}}
+</div> <!-- End site branding area -->
+
+    <!-- Menu -->
+<div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 50px;">
+    {{>mainmenu}}
+</div>
+
+<!-- Slider -->
+<div class="slider-area" style="margin-top: 15px">
+    <div class="block-slider block-slider4">
+        <ul class="" id="bxslider-home4">
+            {{#each randomProduct}}
+            <li id="slider">
+                <img src = "{{this.img1}}" alt="Slide">
+                <h2 class="caption title">
+                    {{this.name}}
+                    {{formatCurrency this.price}}
+                </h2>
+                <div class="caption-group">
+                    <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                        <a class="caption button-radius" onclick="this.parentElement.submit()" style="color: black"><span class="icon"></span>Xem ngay</a>
+                    </form>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+<!-- End slider area -->
+
+<div class="promo-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="single-promo promo1">
+                    <i class="fa fa-refresh"></i>
+                    <p>30 ngày đổi trả</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-promo promo2">
+                    <i class="fa fa-truck"></i>
+                    <p>Giao hàng nhanh</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-promo promo3">
+                    <i class="fa fa-lock"></i>
+                    <p>Thanh toán an toàn</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-promo promo4">
+                    <i class="fa fa-gift"></i>
+                    <p>Ưu dãi hấp dẫn</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End promo area -->
+
+<div class="maincontent-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="latest-product">
+                    <h2 class="section-title">Sản phẩm mới nhất</h2>
+                    <div class="product-carousel">
+                        {{#each topLatest}}
+                        <div class="single-product">
+                            <div class="product-f-image">
+                                <img src= {{this.img1}} style="width:220px; height:220px" alt="">
+                                <div class="product-hover">
+                                    <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                        <a class="view-details-link" onclick="this.parentElement.submit()" style="color: white"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                    </form>
+                                </div>
+                            </div>
+                            <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                <a class="view-details-link" onclick="this.parentElement.submit()" style="color: black"><h2>{{this.name}}</h2></a>
+                            </form>
+
+                            <div class="product-carousel-price">
+                                <ins>{{formatCurrency this.price}}</ins>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End main content area -->
+
+<div class="brands-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="brand-wrapper">
+                    <div class="brand-list">
+                        {{#each manufacturerList}}
+                                <a href={{manufacturerPage this._id}}>
+                                    <img src={{this.img}} alt="">
+                                </a>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End brands area -->
+
+<div class="product-widget-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="single-product-widget">
+                    <h2 class="product-wid-title">Bán chạy nhất</h2>
+                    <a href="" class="wid-view-more">Xem tất cả</a>
+                    {{#each mostSold}}
+                        <div class="single-wid-product">
+                            <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                <a class="view-details-link" onclick="this.parentElement.submit()" style="color: black"><img src={{this.img1}} alt="" class="product-thumb"></a>
+                            </form>
+                            <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                <a class="view-details-link" onclick="this.parentElement.submit()" style="color: black"><h2>{{this.name}}</h2></a>
+                            </form>
+                            <div class="product-wid-price">
+                                <ins>{{formatCurrency this.price}}</ins>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="single-product-widget">
+                    <h2 class="product-wid-title">Xem nhiều nhất</h2>
+                    <a href="#" class="wid-view-more">Xem tất cả</a>
+                    {{#each mostViewed}}
+                        <div class="single-wid-product">
+                            <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                <a class="view-details-link" onclick="this.parentElement.submit()" style="color: black"><img src={{this.img1}} alt="" class="product-thumb"></a>
+                            </form>
+                            <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                <a class="view-details-link" onclick="this.parentElement.submit()" style="color: black"><h2>{{this.name}}</h2></a>
+                            </form>
+                            <div class="product-wid-price">
+                                <ins>{{formatCurrency this.price}}</ins>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End product widget area -->
+
+<div class="footer-top-area">
+    {{>footer-top}}
+</div> <!-- End footer top area -->
+
+<div class="footer-bottom-area">
+    {{>footer-bot}}
+</div> <!-- End footer bottom area -->

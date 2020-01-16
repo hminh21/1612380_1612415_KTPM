@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{pageTitle}}</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light" style="zoom: 150%">
+<div class="container">
+    <div class="card card-register mx-auto mt-5">
+        <div class="card-header">{{pageTitle}}</div>
+        <div id="registerBody" class="card-body">
+            <div style="visibility: hidden;" id="message" class="alert alert-danger" role="alert">
+                <p id="messageText"></p>
+            </div>
+            {{#if errorMsg}}
+                <div id="message" class="alert alert-danger" role="alert">
+                    <p id="messageText">{{errorMsg}}</p>
+                </div>
+            {{/if}}
+            <form id="registerForm" method="post">
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <h6>Tài khoản:</h6>
+                            <div class="form-label-group">
+                                <input
+                                        type="text"
+                                        name="username"
+                                        id="username"
+                                        class="form-control"
+                                        placeholder="First name"
+                                        required="required"
+                                        autofocus="autofocus">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Họ và tên:</h6>
+                            <div class="form-label-group">
+                                <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        class="form-control"
+                                        placeholder="Last name"
+                                        required="required">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <h6>Mật khẩu:</h6>
+                            <div class="form-label-group">
+                                <input
+                                        type="password"
+                                        name="inputPassword"
+                                        id="inputPassword"
+                                        class="form-control"
+                                        placeholder="Password"
+                                        required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Xác nhận mật khẩu:</h6>
+                            <div class="form-label-group">
+                                <input
+                                        type="password"
+                                        onblur="checkPassword()"
+                                        name="confirmPassword"
+                                        id="confirmPassword"
+                                        class="form-control"
+                                        placeholder="Confirm password"
+                                        required="required">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h6>Địa chỉ:</h6>
+                    <div class="form-label-group">
+                        <input
+                                type="text"
+                                name="address"
+                                class="form-control"
+                                placeholder="Email address"
+                                required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <h6>Số điện thoại:</h6>
+                            <div class="form-label-group">
+                                <input
+                                        type="text"
+                                        name="sdt"
+                                        class="form-control"
+                                        placeholder="Password"
+                                        required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Email:</h6>
+                            <div class="form-label-group">
+                                <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        class="form-control"
+                                        required="required">
+                            </div>
+                        </div>
+                        <span style="margin-top:1em">
+                            <div class="alert alert-warning" role="alert">
+                            {{text}}                               
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <button id="commitRegister" type="submit" class="btn btn-primary btn-block">Đăng ký</button>
+            </form>
+            <div class="text-center">
+                <a class="d-block small mt-3" href="login">Đăng nhập</a>
+                <a class="d-block small" href="forgotPassword">Quên mật khẩu?</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!--Check register without submit-->
+<script src="vendor/js/checkRegister.js"></script>
+
+</body>
+
+</html>

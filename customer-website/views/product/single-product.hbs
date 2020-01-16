@@ -1,0 +1,166 @@
+<div class="header-area">
+    {{> header-area}}
+</div> <!-- End header area -->
+
+<div class="site-branding-area">
+    {{>site-branding-area}}
+</div> <!-- End site branding area -->
+
+<div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 50px;">
+    {{>mainmenu}}
+</div>
+
+<!-- Page content -->
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div style="height: 10cm" class="slider-area">
+                        <div class="block-slider block-slider4">
+                            <ul class="" id="bxslider-home4">
+                                <li id="slider">
+                                    <img style="height: 10cm" src ="{{product.img1}}" alt="Slide">
+                                </li>
+                                <li id="slider">
+                                    <img style="height: 10cm" src ="{{product.img2}}" alt="Slide">
+                                </li>
+                                <li id="slider">
+                                    <img style="height: 10cm" src ="{{product.img3}}" alt="Slide">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="product-inner">
+                        <h2 class="product-name">{{product.name}}</h2>
+                        <h4><i class="glyphicon glyphicon-eye-open"></i>&nbsp;<strong>{{product.viewed}}</strong>&nbsp;<i>Lượt xem</i>&nbsp;&nbsp;&nbsp;
+                            <i class="glyphicon glyphicon-shopping-cart"></i>&nbsp;<strong>{{product.sale}}</strong>&nbsp;<i>Lượt mua</i></h4>
+                        <h4><i>Nhà sản xuất:</i><a style="color: black; font-weight: bold;" href="manufacturer/{{product.manufacturer.id}}">&nbsp;&nbsp;<img width="50" height="50" src="{{product.manufacturer.img}}">&nbsp;</a>
+                        <i>Loại sản phẩm:</i><a style="color: black; font-weight: bold" href="category/{{product.category.id}}">&nbsp;{{product.category.name}}</a></h4>
+                        <div class="product-inner-price">
+                            <h3>&nbsp;{{formatCurrency product.price}}</h3>
+                            <textarea style="border: none" cols="70" rows="10" readonly>{{product.info}}</textarea>
+                        </div>
+
+                        {{#if product.status}}
+                            <form action="/cart/add/{{product.id}}" method="post" class="cart">
+                                <div class="col-md-6">
+                                    <label for="size" class="control-label">Chọn size</label>
+                                    <select class="col-md-6 form-control" name="size">
+                                        <option value="36">36</option>
+                                        <option value="37">37</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                    </select>
+                                </div>
+                                </br>
+                                <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-shopping-cart"></i>&nbsp;Thêm vào giỏ</button>
+                            </form>
+                        {{else}}
+                            <img height="100" width="100" src="img/soldout.png">
+                        {{/if}}
+                    </div>
+                </div>
+
+
+            </div>
+            </br>
+            </br>
+            </br>
+                 <div role="tabpanel">
+                     <ul class="product-tab" role="tablist">
+                         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">Xem {{this.count}} bình luận</a></li>
+                         <li role="presentation" class=""><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false">Đánh giá</a></li>
+                     </ul>
+                     <div class="tab-content">
+                           <div role="tabpanel" class="tab-pane fade active in" id="home">
+
+                          {{#if comments}}
+                                 {{#each comments}}
+                                     <div class="col-md-12">
+                                         <div class="well well-lg">
+                                             <div class=col-md-1>
+                                                 <img src="img/customer logo.png" width="70" height="70">
+                                             </div>
+                                             <h4>{{this.customerName}} </h4>
+
+                                             <p class="media-comment">
+                                                 {{this.detail}}
+                                             </p>
+                                         </div>
+                                     </div>
+                                 {{/each}}
+                             {{/if}}
+                                     {{>pagination}}
+                                                              </div>
+
+                         <div role="tabpanel" class="tab-pane fade" id="profile" >
+
+                             <div class="submit-review">
+                                 <form method="post">
+                                     <div class="form-group">
+                                         <p><label for="name">Tên</label> <input name="name" type="text" value="{{curCustomer.info.name}}"></p>
+                                         <p><label for="email">Email</label> <input name="email" type="email" value={{curCustomer.email}}></p>
+                                         <p><label for="review">Bình luận</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
+                                         <p><input type="submit" value="Thêm bình luận" style="border-radius: 10px"></p>
+                                     </div>
+                                 </form>
+                             </div>
+
+                         </div>
+
+                         <div class=col-md-12>
+                             <h3><a>Các mẫu giày tương tự</a></h3>
+                         </div>
+
+                         {{# each relatedProduct}}
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img style="width: 255px; height:191.25px" src="{{this.img1}}" alt="">
+                        </div>
+                        <h2><a href={{productPage this._id}}>{{this.name}}</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>{{formatCurrency this.price}}</ins>
+                        </div>
+
+                        <div class="product-option-shop">
+                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href={{productPage this._id}}>Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- End page content -->
+
+
+<div class="footer-top-area">
+    {{>footer-top}}
+</div> <!-- End footer top area -->
+
+<div class="footer-bottom-area">
+    {{>footer-bot}}
+</div> <!-- End footer bottom area -->
+
+
+
+
+

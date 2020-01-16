@@ -1,0 +1,99 @@
+<div class="header-area" xmlns="http://www.w3.org/1999/html">
+    {{> header-area}}
+</div> <!-- End header area -->
+
+<div class="site-branding-area">
+    {{>site-branding-area}}
+</div> <!-- End site branding area -->
+
+<div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 50px;">
+    {{>mainmenu}}
+</div>
+
+<!-- Page content -->
+ <div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="product-content-right">
+                    <div class="woocommerce">
+                        <form id="checkoutForm" action="/checkout" class="checkout" method="post" name="checkout">
+                            <div id="charge-error" class="alert alert-danger {{#if noError}}hidden{{/if}} ">
+                                {{errMsg}}
+                            </div>
+
+                            <div id="customer_details" class="col2-set">
+                                <div class="col-1">
+                                    <div class="woocommerce-billing-fields">
+                                        <h3>Thông tin của bạn</h3>
+                                        <p id="billing_name_field" class="form-row form-row-first validate-required">
+                                            <label class="" for="billing_first_name">Họ và tên người nhận</label>
+                                            <input type="text" value="{{curCustomer.info.name}}" id="billing_first_name" name="name" class="input-text" required>
+                                        </p>
+
+                                        <p id="billing_address_field" class="form-row form-row-wide address-field validate-required">
+                                            <label class="" for="billing_address_1">Địa chỉ</label>
+                                            <input type="text" value="{{curCustomer.info.address}}" id="billing_address_1" name="address" class="input-text" required>
+                                        </p>
+
+                                        <p id="billing_email_field" class="form-row form-row-first validate-required validate-email">
+                                            <label class="" for="billing_email">Email</label>
+                                            <input type="text" value="{{curCustomer.email}}" id="billing_email" name="email" class="input-text" required>
+                                        </p>
+
+                                        <p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
+                                            <label class="" for="billing_phone">Số điện thoại</label>
+                                            <input type="number" value="{{curCustomer.info.sdt}}" value="" placeholder="" id="billing_phone" name="sdt" class="form-control" required>
+                                        </p>
+
+                                        <p id="billing_card_name_field" class="form-row form-row-wide">
+                                            <label class="" for="billing_card_name">Tên chủ thẻ</label>
+                                            <input type="text" id="billing_card_name" name="cardName" class="form-control" required>
+                                        </p>
+
+                                        <p id="billing_card_number_field" class="form-row form-row-first">
+                                            <label class="" for="billing_card_number">Số thẻ</label>
+                                            <input type="number" id="billing_card_number" name="cardNumber" class="form-control" required>
+                                        </p>
+
+                                        <p id="billing_card_cvc_field" class="form-row form-row-last">
+                                            <label class="" for="billing_card_cvc">CVC</label>
+                                            <input type="number" id="billing_card_cvc" name="cardCVC" class="form-control" required>
+                                        </p>
+
+                                        <p class="form-row form-row-last">
+                                            <label for="card-expiry-month">Tháng hết hạn</label>
+                                            <input type="number" id="card_expiry_month" name="expiryMon" class="form-control" required>
+                                        </p>
+
+                                        <p class="form-row form-row-last">
+                                            <label for="card-expiry-year">Năm hết hạn</label>
+                                            <input type="number" id="card_expiry_year" name="expiryYear" class="form-control" required>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row place-order">
+                                <button type="submit" data-value="Place order" id="confirmBtn" name="woocommerce_checkout_place_order" class="btn btn-success">Xác nhận</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End page content -->
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script src="js/checkoutWithCreditCard.js"></script>
+
+<div class="footer-top-area">
+    {{>footer-top}}
+</div> <!-- End footer top area -->
+
+<div class="footer-bottom-area">
+    {{>footer-bot}}
+</div> <!-- End footer bottom area -->

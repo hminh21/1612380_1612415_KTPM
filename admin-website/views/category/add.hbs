@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    {{> nav-bars}}
+
+</nav>
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    {{>sidebar}}
+
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">{{pageTitle}}</li>
+            </ol>
+
+
+            <!-- Page Content -->
+
+                      
+                      <form action="" method="POST"  class="form-horizontal">
+                          <input type="hidden" name="_id" value="{{category._id}}">
+                                       <div class="form-group">
+                                           <label>Tên loại giày</label>
+                                           <input type="text" class="form-control" name="name" value="{{category.name}}">                                        
+                                       </div>
+                                      
+                                       <div class="form-group">
+                                           <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> {{pageTitle}}</button>                                       
+                                       </div>
+                                    </form>
+                         
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright © Your Website 2019</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+{{>logout}}
+
+{{> js }}

@@ -1,0 +1,47 @@
+
+<div class="mainmenu-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="./">Trang chủ</a></li>
+                        <li><a href="/productList">Sản phẩm</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Phân loại <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">Theo loại </a>
+                                    <ul class="dropdown-menu">
+                                        {{#each categoryList}}
+                                            <li><a tabindex="-1" href="{{categoryPage this._id}}">{{this.name}}</a></li>
+                                        {{/each}}
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">Theo nhà sản xuất</a>
+                                    <ul class="dropdown-menu">
+                                        {{#each manufacturerList}}
+                                            <li>
+                                                <a tabindex="-1" href={{manufacturerPage this._id}}>{{this.name}}</a></li>
+                                        {{/each}}
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="/cart">Giỏ hàng</a></li>
+                        <li><a href="/about">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

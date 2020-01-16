@@ -1,0 +1,238 @@
+
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    {{>nav-bars}}
+
+</nav>
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    {{>sidebar}}
+
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">{{pageTitle}}</li>
+            </ol>
+
+
+            <!-- Page Content -->
+
+            <!-- Popup customer info -->
+            <div id="customerModal" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h1 class="modal-title"><span class="fa fa-pencil-square-o" aria-hidden="true" style="color: black;"></span></h1>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row content">
+                                <div class="col-sm-12">
+                                    <div class="panel panel-success">
+                                        <div class="panel-heading" style="font-size: 25px;font-weight: bold; background-color: black;color: white"><span class="fas fa-user-alt" aria-hidden="true" style="color: white;"></span> Thông tin khách hàng</div>
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <table class="table table-striped table-bordered table-list" id="ta1">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Họ tên</th>
+                                                        <th>Địa chỉ</th>
+                                                        <th>Số điện thoại</th>
+                                                        <th>Email</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td id="cusName"></td>
+                                                        <td id="cusAddress"></td>
+                                                        <td id="cusSdt"></td>
+                                                        <td id="cusEmail"></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popup receiver info -->
+            <div id="receiverModal" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h1 class="modal-title"><span class="fa fa-pencil-square-o" aria-hidden="true" style="color: black;"></span></h1>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row content">
+                                <div class="col-sm-12">
+                                    <div class="panel panel-success">
+                                        <div class="panel-heading" style="font-size: 25px;font-weight: bold; background-color: black;color: white"><span class="fas fa-user-alt" aria-hidden="true" style="color: white;"></span> Thông tin người nhận</div>
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <table class="table table-striped table-bordered table-list" id="ta1">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Họ tên</th>
+                                                        <th>Địa chỉ</th>
+                                                        <th>Số điện thoại</th>
+                                                        <th>Email</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td id="receiverName"></td>
+                                                        <td id="receiverAddress"></td>
+                                                        <td id="receiverSdt"></td>
+                                                        <td id="receiverEmail"></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Popup Cart Modal -->
+            <div id="cartModal" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h1 class="modal-title"><span class="fa fa-pencil-square-o" aria-hidden="true" style="color: black;"></span></h1>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row content">
+                                <div class="col-sm-12">
+                                    <div class="panel panel-success">
+                                        <div class="panel-heading" style="font-size: 25px;font-weight: bold; background-color: black;color: white"><span class="fas fa-user-alt" aria-hidden="true" style="color: white;"></span>&nbsp;Danh sách sản phẩm</div>
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <table class="table table-striped table-bordered table-list" id="ta1">
+                                                    <thead>
+                                                    <tr>
+                                                        <th scope="col">Sản phẩm</th>
+                                                        <th scope="col">Cỡ giày</th>
+                                                        <th scope="col">Đơn giá</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editable table -->
+            <div class="row content">
+                <div class="panel-body" style="overflow-x: auto;">
+                    <table style="white-space: nowrap;" class="table table-striped table-bordered table-list" id="ta1">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Khách hàng</th>
+                            <th>Người nhận</th>
+                            <th>Giỏ hàng</th>
+                            <th>Trạng thái</th>
+                            <th>Hình thức thanh toán</th>
+                            <th>Tổng giá trị</th>
+                            <th>Ngày tạo</th>
+                            <th>Chức năng</th>
+                            <th>ID Stripe</th>
+                        </tr>
+                        </thead>
+                        <tbody id="body-order">
+                        {{#each orders}}
+                            <tr>
+                                <td id="idOrder{{@index}}">{{this._id}}</td>
+                                <td><button id="customerButton{{@index}}" value="{{@index}}" data-toggle="modal" data-target="#customerModal" class="btn-primary btn"><i class="fa fa-search"></i></button></td>
+                                <td><button id="receiverButton{{@index}}" value="{{@index}}" data-toggle="modal" data-target="#receiverModal" class="btn-primary btn"><i class="fa fa-search"></i></button></td>
+                                <td><button id="cartButton{{@index}}" value="{{@index}}" data-toggle="modal" data-target="#cartModal" class="btn-primary btn"><i class="fa fa-search"></i></button></td>
+                                <td>{{this.status}}</td>
+                                <td>{{this.payment}}</td>
+                                <td>{{formatCurrency this.cart.totalPrice}}</td>
+                                <td>{{formatDate this.created}}</td>
+                                <td>
+                                    <a href="orders/update/{{this._id}}"> <i class="fa fa-pen fa-lg" aria-hidden="=true"></i> </a>
+                                    <a href="orders/delete/{{this._id}}" onclick="return confirm ('Bạn có chắc chắn muốn xóa ?');" > <i class="fa fa-trash fa-lg" aria-hidden="=true"></i></a>
+                                </td>
+                                {{#if this.paymentStripeId}}
+                                <td>{{this.paymentStripeId}}</td>
+                                {{else}}
+                                <td>Không có</td>
+                                {{/if}}
+                            </tr>
+                        {{/each}}
+                        </tbody>
+                    </table>
+                                    {{>pagination}}
+
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+
+            <!-- Editable table -->
+            <!-- /.container-fluid -->
+
+            <!-- Sticky Footer -->
+            <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright © Your Website 2019</span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+{{>logout}}
+
+{{> js}}
+
+<script src="js/ajax-modal.js"></script>

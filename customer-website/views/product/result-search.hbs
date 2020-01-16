@@ -1,0 +1,55 @@
+
+<div class="header-area">
+    {{> header-area}}
+</div> <!-- End header area -->
+
+<div class="site-branding-area">
+    {{>site-branding-area}}
+</div> <!-- End site branding area -->
+
+<div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 50px;">
+    {{>mainmenu}}
+</div>
+
+<!-- Page content -->
+<div class="container">
+    <br>
+    <h4>Tìm thấy {{count}} kết quả thỏa yêu cầu:</h4>
+</div>
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            {{#each productList}}
+                <div class="col-md-4 col-sm-8">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                                <a onclick="this.parentElement.submit()" style="color: black"><img style="width: 360px; height:270px" src="{{this.img1}}" alt=""></a>
+                            </form>
+                        </div>
+                        <form id="plusViewForm" action="incView/{{this.id}}" method="POST">
+                            <a onclick="this.parentElement.submit()" style="color: black"><h2>{{this.name}}</h2></a>
+                        </form>
+                        <div class="product-carousel-price">
+                            <ins>{{formatCurrency this.price}}</ins>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+<!-- End page content -->
+
+
+<div class="footer-top-area">
+    {{>footer-top}}
+</div> <!-- End footer top area -->
+
+<div class="footer-bottom-area">
+    {{>footer-bot}}
+</div> <!-- End footer bottom area -->
+
+{{>pagination}}

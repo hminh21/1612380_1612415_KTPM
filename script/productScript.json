@@ -1,0 +1,1 @@
+{"_id":{"$oid":"5cd0796500e1161fd09e6310"},"name":"Pan Vigor 8 TF","manufacturer":{"$oid":"5cd0796500e1161fd09e630f"},"category":{"$oid":"5cd0796500e1161fd09e630e"},"img":"/abc","price":{"$numberInt":"400000"},"status":true,"info":"Giày chính hãng\n Chất lượng cao","__v":{"$numberInt":"0"}}

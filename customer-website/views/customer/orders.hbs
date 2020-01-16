@@ -1,0 +1,140 @@
+<div class="header-area">
+    {{> header-area}}
+</div> <!-- End header area -->
+
+<div class="site-branding-area">
+    {{>site-branding-area}}
+</div> <!-- End site branding area -->
+
+<div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 50px;">
+    {{>mainmenu}}
+</div>
+
+<!-- Page content -->
+</br>
+<div class="container" style="overflow-x: auto;">
+    {{#if orders}}
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">Mã đơn hàng</th>
+                <th scope="col">Sản phẩm</th>
+                <th scope="col">Tổng giá trị</th>
+                <th scope="col">Ngày đặt</th>
+                <th scope="col">Phương thức</th>
+                <th scope="col">Người nhận</th>
+                <th scope="col">Trạng thái</th>
+            </tr>
+            </thead>
+            <tbody id="body-order">
+            {{#each orders}}
+                <tr>
+                    <td id="idOrder{{@index}}">{{this._id}}</td>
+                    <td>
+                        <!--{{#each this.cart.items}}
+                            {{#if this}}
+                                {{this.name}}&nbsp;-&nbsp;{{this.size}}&nbsp;-&nbsp;{{formatCurrency this.price}}</br>
+                            {{/if}}
+                        {{/each}}-->
+                        <button id="cartButton{{@index}}" value="{{@index}}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cartModal">
+                            Xem danh sách sản phẩm
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <h5 class="modal-title" id="exampleModalLabel">Danh sách sản phẩm</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Sản phẩm</th>
+                                                <th scope="col">Cỡ giày</th>
+                                                <th scope="col">Đơn giá</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{formatCurrency this.cart.totalPrice}}</td>
+                    <td>{{formatDate this.created}}</td>
+                    <td>{{this.payment}}</td>
+                    <td>
+                        <button id="receiverButton{{@index}}" value="{{@index}}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#receiverModal">
+                            Xem người nhận
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="receiverModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <h5 class="modal-title" id="exampleModalLabel">Thông tin người nhận</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Tên người nhận</th>
+                                                <th scope="col">Địa chỉ</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Số điện thoại</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td id="receiverName"></td>
+                                                <td id="receiverAddress"></td>
+                                                <td id="receiverEmail"></td>
+                                                <td id="receiverSDT"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{this.status}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <img src="img/emptyorder.png">
+    {{/if}}
+</div>
+<!-- End page content -->
+
+<div class="footer-top-area">
+    {{>footer-top}}
+</div> <!-- End footer top area -->
+
+<div class="footer-bottom-area">
+    {{>footer-bot}}
+</div> <!-- End footer bottom area -->
+<script src="js/order-js.js"></script>
+
+
+
+

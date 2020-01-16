@@ -1,0 +1,36 @@
+{{#ifCond 0 count}}
+
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+ 
+    {{#ifCond 0 prevPages}}
+        <li><a href="{{url}}?page=1"><<</a></li>
+
+       
+    {{/ifCond}}
+<li>
+    <a href="{{url}}?page={{prev}}">Previous</a>
+</li>
+
+    {{#forLoop url pageStart pageEnd}}
+    <li><a href="?page={{this}}">{{this}}</a></li>
+    {{/forLoop}}
+
+    {{#ifCond next numPages}}
+    <li>
+        <a href="{{url}}?page={{next}}">Next</a>
+    </li>
+    {{/ifCond}}
+
+    {{#ifCond 0 numPages}}
+        <li>
+            <a href="{{url}}?page={{numPages}}">>></a>
+        </li>
+   
+    {{/ifCond}}
+
+ </ul>
+</nav>
+
+
+{{/ifCond}}

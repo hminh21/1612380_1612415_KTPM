@@ -1,0 +1,40 @@
+<div class="search-bar">
+    <form class="form-inline row" action="/result-search" method="get">
+        <div class="form-group">
+            <input name="name" type="text" class="form-control search-input" id="searchName" placeholder="Nhập tên sản phẩm">
+        </div>
+
+        <div class="form-group">
+            <select name="price" class="form-control search-input" id="searchPrice">
+                <option value='' selected>Chọn mức giá</option>
+                <option value="200_400">200.000đ - 400.000đ</option>
+                <option value="400_600">400.000đ - 600.000đ</option>
+                <option value="600_800">600.000đ - 800.000đ</option>
+                <option value="800_1000">800.000đ - 1.000.000đ</option>
+                <option value="1000_INF">Trên 1.000.000đ</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <select name="category" class="form-control search-input" id="searchType">
+                <option value='' selected>Chọn loại</option>
+                {{#each categoryList}}
+                    <option value="{{this._id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group">
+            <select name="manufacturer" class="form-control search-input" id="searchBrand">
+                <option value='' selected>Chọn NSX</option>
+                {{#each manufacturerList}}
+                    <option value="{{this._id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <span>
+            <button type="submit" class="btn btn-success search-button">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </form>
+</div>

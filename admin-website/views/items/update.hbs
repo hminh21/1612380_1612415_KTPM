@@ -1,0 +1,135 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    {{> nav-bars}}
+
+</nav>
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    {{>sidebar}}
+
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">{{pageTitle}}</li>
+            </ol>
+
+
+            <!-- Page Content -->
+
+            <div class="modal-body">
+                <div class="row content">
+                    <div class="col-sm-12">
+                        <form method="POST" action="" enctype="multipart/form-data" class="form-horizontal">
+                            <div class="panel panel-success">
+                                <div class="panel-heading" style="font-size: 25px;font-weight: bold; background-color: rgb(28, 188, 156);color: white"> &nbsp; Cập Nhật Sản Phẩm</div>
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <div class="form-group">
+                                                <label for="name" class="col-md-4 control-label">Tên Sản Phẩm</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" value="{{product.name}}" class="form-control" id="tesp" name="name" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md">
+                                                    <div class="form-group">
+                                                        <label for="price" class="col-md-4 control-label">Giá</label>
+                                                        <div class="col-md-8">
+                                                            <input type="number" value={{product.price}} class="form-control" id="kt" name="price" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="category" class="col-md-4 control-label">Loại sản phẩm</label>
+                                                <select class="col-md-6 form-control" name="category">
+                                                    {{#each categories}}
+                                                        <option value={{this._id}}>{{this.name}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="manufacturer" class="col-md-4 control-label">Nhà Sản Xuất</label>
+                                                <select class="col-md-6 form-control" id="exampleFormControlSelect1" name="manufacturer">
+                                                    {{#each manufacturers}}
+                                                        <option value={{this._id}}>{{this.name}}</option>
+                                                    {{/each}}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="info" class="col-md-4 control-label">Mô Tả</label>
+                                                <div class="col-md-8">
+                                                    <textarea id="mt" cols="110" rows="8" name="info" required>{{product.info}}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="file" class="col-md-4 control-label">Hình Ảnh</label>
+                                                <div class="col-md-12">
+                                                    <input type="file" accept="image/*" class="form-control" id="file" name="img" required onchange="readURL(this);">
+                                                    {{product.img1}}
+                                                </div>
+                                                </br>
+                                                <div class="col-md-12">
+                                                    <input type="file" accept="image/*" class="form-control" id="file" name="img" required onchange="readURL(this);">
+                                                    {{product.img2}}
+                                                </div>
+                                                </br>
+                                                <div class="col-md-12">
+                                                    <input type="file" accept="image/*" class="form-control" id="file" name="img" required onchange="readURL(this);">
+                                                    {{product.img3}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <div class="panel-footer">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-success">Cập nhật</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright © Your Website 2019</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+{{>logout}}
+
+{{> js }}

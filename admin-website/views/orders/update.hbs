@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    {{> nav-bars}}
+
+</nav>
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    {{>sidebar}}
+
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">{{pageTitle}}</li>
+            </ol>
+
+
+            <!-- Page Content -->
+
+            <div class="modal-body">
+                <div class="row content">
+                    <div class="col-sm-12">
+                        <form method="POST" action="" class="form-horizontal">
+                            <div class="panel-heading" style="font-size: 25px;font-weight: bold; background-color: rgb(28, 188, 156);color: white"> &nbsp; Cập Nhật Đơn Hàng</div>
+                            <div class="panel panel-success">
+                                <div class="row">
+                                    <div class="form-group col-sm-6">
+                                        <label>Mã đơn hàng</label>
+                                        <input name="id" class="form-control" type="text" value="{{order._id}}" readonly="true">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Tài khoản khách hàng</label>
+                                        <input name="customerName" class="form-control" type="text" value="{{order.customer.username}}" readonly="true">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="totalPrice">Thành tiền</label>
+                                        <input id="totalPrice" name="totalPrice" class="form-control" type="number" value="{{order.cart.totalPrice}}">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="payment">Hình thức thanh toán</label>
+                                        <select class="form-control" id="payment" name="payment" readonly="true">
+                                            {{#if isCreditCard}}
+                                                <option value="Credit card">Credit card</option>
+                                                <option value="Ship COD">Ship COD</option>
+                                            {{/if}}
+                                            {{#if isShipCod}}
+                                                <option value="Ship COD">Ship COD</option>
+                                                <option value="Credit card">Credit card</option>
+                                            {{/if}}
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="status">Trạng thái</label>
+                                        <select class="form-control" id="status" name="status">
+                                            {{#if isShipping}}
+                                                <option value="Đang giao">Đang giao</option>
+                                                <option value="Chưa giao">Chưa giao</option>
+                                                <option value="Đã giao">Đã giao</option>
+                                            {{/if}}
+                                            {{#if isShipped}}
+                                                <option value="Đã giao">Đã giao</option>
+                                                <option value="Chưa giao">Chưa giao</option>
+                                                <option value="Đang giao">Đang giao</option>
+                                            {{/if}}
+                                            {{#if isNotShip}}
+                                                <option value="Chưa giao">Chưa giao</option>
+                                                <option value="Đã giao">Đã giao</option>
+                                                <option value="Đang giao">Đang giao</option>
+                                            {{/if}}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <button type="submit" class="btn btn-success">Cập nhật</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright © Your Website 2019</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+{{>logout}}
+
+{{> js }}

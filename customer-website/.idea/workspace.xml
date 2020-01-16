@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="83b56869-4414-497d-84d4-bbb6d89d2291" name="Default Changelist" comment="">
+
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/customerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/customerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/productController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/catalog.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/catalog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/customer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home/homepage.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/home/homepage.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/product/cart.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/product/cart.hbs" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/../admin-website/controllers/itemsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../admin-website/controllers/itemsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/models/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/../admin-website/models/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/Logo Web.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/brand1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/brand2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/brand3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/brand4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/brand5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/brand6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/crossword.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/h4-slide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/h4-slide2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/h4-slide3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/h4-slide4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/h4-slide7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/product-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/product-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/product-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/product-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/product-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/product-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/product-thumb-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/product-thumb-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/product-thumb-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/product-thumb-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/public/img/test-create.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/views/items/add.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/../admin-website/views/items/add.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/views/items/update.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/../admin-website/views/items/update.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin-website/views/layouts/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/../admin-website/views/layouts/layout.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/productController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/dao/productDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/dao/productDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/Logo Web.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/brand1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/brand2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/brand3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/brand4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/brand5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/brand6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/crossword.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/h4-slide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/h4-slide2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/h4-slide3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/h4-slide4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/h4-slide7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product-thumb-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product-thumb-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product-thumb-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/product-thumb-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/catalog.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/catalog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home/homepage.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/home/homepage.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/main.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/main.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/product/list.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/product/list.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/product/single-product.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/product/single-product.hbs" afterDir="false" />
+
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+
+        <entry file="file://$PROJECT_DIR$/views/product/cart.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="130" column="58" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
+
+        <entry file="file://$PROJECT_DIR$/views/product/list.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="23" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#h2#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#4;n#!!top" expanded="true" />
+              </folding>
+
+            </state>
+          </provider>
+        </entry>
+      </file>
+
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/productController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="184" column="20" lean-forward="true" selection-start-line="184" selection-start-column="20" selection-end-line="184" selection-end-column="20" />
+
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/home/homepage.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="156" column="35" selection-start-line="156" selection-start-column="35" selection-end-line="156" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#5;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#7;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#7;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#7;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#form#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#7;n#!!top" expanded="true" />
+              </folding>
+
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/cart.js">
+          <provider selected="true" editor-type-id="text-editor">
+
+            <state relative-caret-position="357">
+              <caret line="21" column="53" lean-forward="true" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+
+            <state relative-caret-position="199">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/catalog.js">
+          <provider selected="true" editor-type-id="text-editor">
+
+            <state relative-caret-position="153">
+              <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+
+            <state relative-caret-position="233">
+              <caret line="173" column="18" selection-start-line="173" selection-start-column="18" selection-end-line="173" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/product/single-product.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
+              <folding>
+                <element signature="e#1570#1576#1#HTML" expanded="true" />
+                <element signature="e#945#951#0#HTML" expanded="true" />
+                <element signature="e#952#958#0#HTML" expanded="true" />
+                <element signature="e#958#964#0#HTML" expanded="true" />
+                <element signature="e#964#970#0#HTML" expanded="true" />
+                <element signature="e#1101#1107#1#HTML" expanded="true" />
+                <element signature="e#1010#1016#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+                <element signature="e#1313#1319#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+                <element signature="e#1504#1510#1#HTML" expanded="true" />
+                <element signature="e#1686#1692#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+              </folding>
+
+            </state>
+          </provider>
+        </entry>
+      </file>
+
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/home/homepage.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="90" column="35" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/product/single-product.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="48" column="62" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="62" />
+
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/homeController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="25" selection-start-line="25" selection-end-line="55" selection-end-column="4" />
+
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>indexRouter</find>
+      <find>card-body</find>
+      <find>username</find>
+      <find>product_Controller</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>productController</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+
+        <option value="$PROJECT_DIR$/views/shop.hbs" />
+        <option value="$PROJECT_DIR$/routes/single-product.js" />
+        <option value="$PROJECT_DIR$/routes/register.js" />
+        <option value="$PROJECT_DIR$/routes/login.hbs" />
+        <option value="$PROJECT_DIR$/routes/login.js" />
+        <option value="$PROJECT_DIR$/routes/forgotPassword.js" />
+
+        <option value="$PROJECT_DIR$/views/fotgotPassword.hbs" />
+        <option value="$PROJECT_DIR$/views/register.hbs" />
+        <option value="$PROJECT_DIR$/views/forgotPassword.hbs" />
+        <option value="$PROJECT_DIR$/routes/userInfoUpdate.js" />
+        <option value="$PROJECT_DIR$/views/userInfoUpdate.hbs" />
+        <option value="$PROJECT_DIR$/views/list.hbs" />
+        <option value="$PROJECT_DIR$/routes/orders.js" />
+        <option value="$PROJECT_DIR$/views/orders.hbs" />
+        <option value="$PROJECT_DIR$/views/partials/search-bar.hbs" />
+        <option value="$PROJECT_DIR$/routes/list.js" />
+        <option value="$PROJECT_DIR$/views/single-product.hbs" />
+        <option value="$PROJECT_DIR$/views/login.hbs" />
+        <option value="$PROJECT_DIR$/routes/home.js" />
+        <option value="$PROJECT_DIR$/views/about.hbs" />
+        <option value="$PROJECT_DIR$/models/dao/customerDao.js" />
+        <option value="$PROJECT_DIR$/handlebarsHelper.js" />
+        <option value="$PROJECT_DIR$/views/customer/profile.hbs" />
+        <option value="$PROJECT_DIR$/views/customer/updateProfile.hbs" />
+        <option value="$PROJECT_DIR$/views/partials/header-area.hbs" />
+        <option value="$PROJECT_DIR$/views/customer/orders.hbs" />
+        <option value="$PROJECT_DIR$/views/partials/site-branding-area.hbs" />
+        <option value="$PROJECT_DIR$/routes/about.js" />
+        <option value="$PROJECT_DIR$/views/partials/messages.hbs" />
+        <option value="$PROJECT_DIR$/public/js/checkRegister.js" />
+        <option value="$PROJECT_DIR$/views/customer/register.hbs" />
+        <option value="$PROJECT_DIR$/public/vendor/js/checkRegister.js" />
+        <option value="$PROJECT_DIR$/views/partials/footer-top.hbs" />
+        <option value="$PROJECT_DIR$/views/home/about.hbs" />
+        <option value="$PROJECT_DIR$/views/partials/mainmenu.hbs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/config/passport.js" />
+        <option value="$PROJECT_DIR$/views/customer/login.hbs" />
+        <option value="$PROJECT_DIR$/public/css/sing-product-css.css" />
+        <option value="$PROJECT_DIR$/views/layouts/main.hbs" />
+        <option value="$PROJECT_DIR$/public/css/single-product-css.css" />
+        <option value="$PROJECT_DIR$/models/product.js" />
+        <option value="$PROJECT_DIR$/models/dao/productDao.js" />
+        <option value="$PROJECT_DIR$/controllers/homeController.js" />
+
+        <option value="$PROJECT_DIR$/views/partials/site-branding-area.hbs" />
+        <option value="$PROJECT_DIR$/views/product/single-product.hbs" />
+        <option value="$PROJECT_DIR$/public/css/cart-css.css" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/partials/side-bar.hbs" />
+        <option value="$PROJECT_DIR$/views/customer/checkout.hbs" />
+        <option value="$PROJECT_DIR$/views/partials/mainmenu.hbs" />
+        <option value="$PROJECT_DIR$/models/dao/productDao.js" />
+        <option value="$PROJECT_DIR$/views/product/list.hbs" />
+        <option value="$PROJECT_DIR$/controllers/customerController.js" />
+        <option value="$PROJECT_DIR$/routes/customer.js" />
+        <option value="$PROJECT_DIR$/models/order.js" />
+        <option value="$PROJECT_DIR$/models/cart.js" />
+        <option value="$PROJECT_DIR$/controllers/productController.js" />
+        <option value="$PROJECT_DIR$/views/product/cart.hbs" />
+        <option value="$PROJECT_DIR$/routes/catalog.js" />
+
+        <option value="$PROJECT_DIR$/routes/catalog.js" />
+        <option value="$PROJECT_DIR$/controllers/productController.js" />
+        <option value="$PROJECT_DIR$/views/product/list.hbs" />
+        <option value="$PROJECT_DIR$/views/product/single-product.hbs" />
+
+        <option value="$PROJECT_DIR$/views/home/homepage.hbs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="y" value="-24" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="customer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="customer-website" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="product" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\LuuTuanNguyen\Projects\WebDevelop\Đồ án cuối kì\e-commerce\customer-website\public\vendor\js" />
+      <recent name="D:\LuuTuanNguyen\Projects\WebDevelop\Đồ án cuối kì\e-commerce\customer-website\views\home" />
+      <recent name="D:\LuuTuanNguyen\Projects\WebDevelop\Đồ án cuối kì\e-commerce\customer-website\public\vendor\css" />
+      <recent name="D:\LuuTuanNguyen\Projects\WebDevelop\Đồ án cuối kì\e-commerce\customer-website\public\css" />
+      <recent name="G:\e-commerce\customer-website\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\LuuTuanNguyen\Projects\WebDevelop\Đồ án cuối kì\e-commerce\customer-website\public\css" />
+      <recent name="D:\LuuTuanNguyen\Projects\WebDevelop\Đồ án cuối kì\e-commerce\customer-website\public\vendor\js" />
+      <recent name="D:\LuuTuanNguyen\Projects\WebDevelop\Đồ án cuối kì\e-commerce\customer-website\public\vendor" />
+      <recent name="D:\LuuTuanNguyen\Projects\WebDevelop\Đồ án cuối kì\e-commerce\customer-website\public\img" />
+      <recent name="D:\LuuTuanNguyen\Projects\WebDevelop\Đồ án cuối kì\e-commerce\customer-website\public\js" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83b56869-4414-497d-84d4-bbb6d89d2291" name="Default Changelist" comment="" />
+      <created>1555767405028</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555767405028</updated>
+      <workItem from="1555767416774" duration="1954000" />
+      <workItem from="1555862412853" duration="4167000" />
+      <workItem from="1555869808969" duration="17000" />
+      <workItem from="1555869852495" duration="3624000" />
+      <workItem from="1555920999970" duration="6956000" />
+      <workItem from="1555939464377" duration="7003000" />
+      <workItem from="1555949966060" duration="999000" />
+      <workItem from="1555950995448" duration="5365000" />
+      <workItem from="1555956383115" duration="721000" />
+      <workItem from="1556005416186" duration="933000" />
+      <workItem from="1556006648327" duration="1655000" />
+      <workItem from="1556008467976" duration="787000" />
+      <workItem from="1556014746152" duration="1217000" />
+      <workItem from="1556017473440" duration="1786000" />
+      <workItem from="1556966100118" duration="1817000" />
+      <workItem from="1556968406697" duration="2262000" />
+      <workItem from="1558180791686" duration="110000" />
+      <workItem from="1558181900517" duration="21000" />
+      <workItem from="1558187609491" duration="69000" />
+      <workItem from="1558188822321" duration="2482000" />
+      <workItem from="1558371198981" duration="5017000" />
+      <workItem from="1558811674838" duration="2926000" />
+      <workItem from="1558876842699" duration="2242000" />
+      <workItem from="1558879108049" duration="461000" />
+      <workItem from="1558879961882" duration="4477000" />
+      <workItem from="1558886781249" duration="12081000" />
+      <workItem from="1558953791215" duration="9206000" />
+      <workItem from="1558968152320" duration="14754000" />
+      <workItem from="1559032167663" duration="8379000" />
+      <workItem from="1559296041349" duration="1422000" />
+      <workItem from="1559545337249" duration="12416000" />
+      <workItem from="1559568001894" duration="13372000" />
+      <workItem from="1559583516459" duration="1274000" />
+      <workItem from="1559745827463" duration="6214000" />
+      <workItem from="1559809713505" duration="6188000" />
+      <workItem from="1559845537787" duration="1883000" />
+      <workItem from="1559899552512" duration="4611000" />
+      <workItem from="1559928348176" duration="3148000" />
+      <workItem from="1560087251827" duration="571000" />
+      <workItem from="1560157492428" duration="9879000" />
+
+      <workItem from="1560169470215" duration="17991000" />
+      <workItem from="1560240924633" duration="4005000" />
+      <workItem from="1560250407166" duration="1409000" />
+
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+
+    <option name="totallyTimeSpent" value="190696000" />
+
+    <option name="totallyTimeSpent" value="167291000" />
+
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25669643" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32843137" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32843137" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5014881" side_tool="true" weight="0.34150326" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4985119" visible="true" weight="0.34150326" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/routes/forgotPassword.js" />
+    <entry file="file://$PROJECT_DIR$/routes/index.js" />
+    <entry file="file://$PROJECT_DIR$/routes/orders.js" />
+    <entry file="file://$PROJECT_DIR$/routes/register.js" />
+    <entry file="file://$PROJECT_DIR$/routes/result-search.js" />
+    <entry file="file://$PROJECT_DIR$/routes/single-product.js" />
+    <entry file="file://$PROJECT_DIR$/routes/userInfoUpdate.js" />
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/category.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/customer/profile.hbs" />
+    <entry file="file://$PROJECT_DIR$/views/customer/updateProfile.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/customer/orders.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="28" column="105" selection-start-line="28" selection-start-column="105" selection-end-line="28" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/about.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/manufacturer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/messages.hbs" />
+    <entry file="file://$PROJECT_DIR$/models/dao/customerDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms2.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="66" column="18" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendor/js/checkRegister.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/about.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/product/cart.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/footer-top.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/footer-bot.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/passport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="47" lean-forward="true" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+
+    <entry file="file://$PROJECT_DIR$/models/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/customer/register.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/product/result-search.hbs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/sing-product-css.css" />
+    <entry file="file://$PROJECT_DIR$/views/layouts/main.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlebarsHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/single-product-css.css" />
+    <entry file="file://$PROJECT_DIR$/controllers/homeController.js">
+
+    <entry file="file://$PROJECT_DIR$/views/partials/side-bar.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/search-bar.hbs">
+
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/header-area.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/customer/login.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="19" selection-start-line="36" selection-start-column="12" selection-end-line="43" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/sectional.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/search-bar.hbs">
+
+    <entry file="file://$PROJECT_DIR$/models/order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/admin.js">
+
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/site-branding-area.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="18" selection-start-line="16" selection-start-column="12" selection-end-line="43" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+
+    <entry file="file://$PROJECT_DIR$/public/css/cart-css.css">
+
+    <entry file="file://$PROJECT_DIR$/views/partials/mainmenu.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/customer/register.hbs">
+
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/customerController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/customer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="40" column="56" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+
+    <entry file="file://$PROJECT_DIR$/app.js">
+
+    <entry file="file://$PROJECT_DIR$/views/product/result-search.hbs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/sing-product-css.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/main.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlebarsHelper.js">
+
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+
+    <entry file="file://$PROJECT_DIR$/views/partials/side-bar.hbs">
+
+    <entry file="file://$PROJECT_DIR$/views/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="24" column="24" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/customer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/product.js">
+
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/dao/productDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-379">
+          <caret line="82" column="74" selection-start-line="82" selection-start-column="74" selection-end-line="82" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/single-product-css.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="80" column="11" selection-start-line="80" selection-start-column="11" selection-end-line="80" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/dao/productDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/product/list.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-311">
+          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/mainmenu.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/customer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/customerController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/customer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+
+    <entry file="file://$PROJECT_DIR$/controllers/homeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="25" selection-start-line="25" selection-end-line="55" selection-end-column="4" />
+
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/catalog.js">
+      <provider selected="true" editor-type-id="text-editor">
+
+        <state relative-caret-position="267">
+          <caret line="184" column="20" lean-forward="true" selection-start-line="184" selection-start-column="20" selection-end-line="184" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/product/cart.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="130" column="58" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="53" lean-forward="true" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/catalog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/product/single-product.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="48" column="62" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/homepage.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="90" column="35" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
+
+        <state relative-caret-position="199">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/productController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="173" column="18" selection-start-line="173" selection-start-column="18" selection-end-line="173" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/product/single-product.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
+          <folding>
+            <element signature="e#1570#1576#1#HTML" expanded="true" />
+            <element signature="e#945#951#0#HTML" expanded="true" />
+            <element signature="e#952#958#0#HTML" expanded="true" />
+            <element signature="e#958#964#0#HTML" expanded="true" />
+            <element signature="e#964#970#0#HTML" expanded="true" />
+            <element signature="e#1101#1107#1#HTML" expanded="true" />
+            <element signature="e#1010#1016#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+            <element signature="e#1313#1319#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+            <element signature="e#1504#1510#1#HTML" expanded="true" />
+            <element signature="e#1686#1692#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/product/list.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="23" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#h2#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#4;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/homepage.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="156" column="35" selection-start-line="156" selection-start-column="35" selection-end-line="156" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#7;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#7;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#7;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#form#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#7;n#!!top" expanded="true" />
+          </folding>
+
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
