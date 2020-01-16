@@ -3,6 +3,7 @@ const Order = require('../models/order');
 const Cart = require('../models/cart');
 const mongoose = require('mongoose');
 const db = require('../models/index')
+const Pagination = require('../class/Pagination')
 
 exports.order_list= async function(req,res)
 {
@@ -14,32 +15,18 @@ exports.order_list= async function(req,res)
     let page = req.query.page || 1;
     page=parseInt(page);
     const numPageLink = 2;
-
-    const pageStart = page;
-    const prev=page-1 >0?page-1:1;
-    const next=page+1;
     const limit = 5;
-    const offset = (page - 1) * limit;
 
-    const orders = await db.Order.find().limit(limit).skip(offset).sort({created:-1});
-    const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
-    const nextPages = pageStart + numPageLink;
+    const pagination = (new Pagination({page, limit, count, numPageLink})).get()
+    const orders = await db.Order.find().limit(limit).skip(pagination.offset).sort({created:-1});
     const count = await db.Order.count();
 
-    const numPages = Math.ceil(count / limit);
-    const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;
 
 
     res.render('orders/list', { pageTitle: 'Danh sách hóa đơn',
         orders: orders,
         nameAdmin: name,
-        prev:prev,
-        next:next,
-        prevPages:prevPages,
-        nextPages:nextPages,
-        numPages:numPages,
-        pageStart:pageStart,
-        pageEnd:pageEnd,
+        ...pagination,
         url: url
        });
 };

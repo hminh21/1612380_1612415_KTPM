@@ -9,6 +9,8 @@ const mongoose = require('mongoose');
 const async = require('async');
 const multer = require('multer');
 const upload = multer({dest: '../public/img/'});
+const Pagination = require('../class/Pagination')
+const db = require('../models/index')
 
 exports.item_list = async function(req,res) {
     const name = req.user.info.name;
@@ -18,35 +20,19 @@ exports.item_list = async function(req,res) {
     let page=req.query.page || 1;
     page=parseInt(page);
     const numPageLink = 2;
-
-    const pageStart = page;
-    const prev=page-1 >0?page-1:1;
-    const next=page+1;
     const limit = 5;
     const offset = (page - 1) * limit;
 
-    const list= await Product.find({isDeleted: false}).limit(limit).skip(offset)
+    const list= await db.Product.find({isDeleted: false}).limit(limit).skip(offset)
         .populate('category manufacturer').sort(mysort);
-
-    const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
-    const nextPages = pageStart + numPageLink;
-    const count = await Product.count({isDeleted:false});
-
-    const numPages = Math.ceil(count / limit);
-    const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;
-
+    const count = await db.Product.count({isDeleted:false});
+    const pagination = (new Pagination({page, limit, count, numPageLink})).get()
 
     res.render('items/list',{
         pageTitle: 'Danh sách sản phẩm',
         productList: await list,
         nameAdmin: name,
-        prev:prev,
-        next:next,
-        prevPages:prevPages,
-        nextPages:nextPages,
-        numPages:numPages,
-        pageStart:pageStart,
-        pageEnd:pageEnd,
+        ...pagination,
         url: url
     });
 };

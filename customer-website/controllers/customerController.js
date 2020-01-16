@@ -10,6 +10,7 @@ const passport = require('passport');
 const randomstring= require('randomstring');
 const sendMail=require('../misc/mailer');
 const Product = require('../models/product');
+const db = require('../models/index')
 
 
 exports.forgotPassword_index = function(req, res){
@@ -20,7 +21,7 @@ exports.forgotPassword_index = function(req, res){
 exports.customer_orders = async function(req, res) {
     const manufacturer = productDao.get_Manufacturer();
     const category = productDao.get_Category();
-    const orders = await Order.find({customer: req.user}).sort({created: -1});
+    const orders = await db.Order.find({customer: req.user}).sort({created: -1});
     if(orders){
         res.render('customer/orders', {
             pageTitle: 'Các đơn hàng',
@@ -42,13 +43,13 @@ exports.customer_orders = async function(req, res) {
 };
 
 exports.order_getCartInfo = async function(req,res){
-    const orderInfo = await Order.findById(req.params.id,'cart');
+    const orderInfo = await db.Order.findById(req.params.id,'cart');
     //console.log(orderInfo);
     res.json(orderInfo);
 };
 
 exports.order_getReceiverInfo = async function(req,res){
-    const receiverInfo = await Order.findById(req.params.id,'name address email sdt');
+    const receiverInfo = await db.Order.findById(req.params.id,'name address email sdt');
     res.json(receiverInfo);
 };
 
@@ -158,7 +159,7 @@ exports.checkoutCOD_post = function(req,res,){
 
     const productsInOrder = cart.items;
     productsInOrder.forEach(  async function(product){
-        await Product.findByIdAndUpdate(product._id,{$inc: {sale: 1}});
+        await db.Product.findByIdAndUpdate(product._id,{$inc: {sale: 1}});
     });
 };
 
@@ -184,7 +185,7 @@ exports.customer_register_get =  function(req, res){
 
 exports.customer_check_email = async (req, res)=>{
     let check = {isAvailable: false};
-    const foundEmail = await Customer.findOne({email: req.body.email});
+    const foundEmail = await db.Customer.findOne({email: req.body.email});
 
     if(foundEmail)
     {
@@ -195,7 +196,7 @@ exports.customer_check_email = async (req, res)=>{
 
 exports.customer_check_username = async (req,res)=>{
     let check = {isAvailable: false};
-    const foundUsername = await Customer.findOne({username: req.body.username});
+    const foundUsername = await db.Customer.findOne({username: req.body.username});
     if(foundUsername)
     {
         check.isAvailable = true;
@@ -282,7 +283,7 @@ exports.customer_verify_post= async function (req,res,next) {
     try{
         const {secretToken} =req.body;
 
-     const customer= await Customer.findOne({'secretToken':secretToken.trim()});
+     const customer= await db.Customer.findOne({'secretToken':secretToken.trim()});
     if(!customer) {
         req.flash('error','Không thấy người dùng');
         res.redirect('verify');
@@ -307,7 +308,7 @@ exports.customer_verify_post= async function (req,res,next) {
 
 exports.customer_resetPassword = async function(req, res) {
     try{
-        const customer=await Customer.findOne({email:req.body.inputEmail});
+        const customer=await db.Customer.findOne({email:req.body.inputEmail});
         if(!customer) {
             req.flash('error','Không thấy người dùng');
             res.redirect('forgotPassword');
@@ -382,7 +383,7 @@ exports.changepassword_get=function(req,res)
 
 exports.changepassword_post=async function(req,res)
 {
-    const customer= await Customer.findById(req.user._id);
+    const customer= await db.Customer.findById(req.user._id);
     const oldPass=req.body.oldPassword;
     const newPass=req.body.newPassword;
     if (!customer.validPassword(oldPass)){

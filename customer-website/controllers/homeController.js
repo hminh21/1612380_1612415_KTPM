@@ -5,12 +5,14 @@ const productDao = require('../models/dao/productDao');
 const customerDao = require('../models/dao/customerDao');
 
 exports.home_index = async function (req, res) {
+
     const Random = productDao.get_Random_Product();
     const latest = productDao.get_LatestProduct();
     const manufacturer = productDao.get_Manufacturer();
     const category = productDao.get_Category();
     const most_sold = productDao.get_Most_Sold();
     const most_viewed = productDao.get_Most_Viewed();
+   
     res.render('home/homepage',{
         pageTitle: 'Trang chủ',
         randomProduct: await Random,

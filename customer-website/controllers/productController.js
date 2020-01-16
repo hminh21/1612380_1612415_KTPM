@@ -7,6 +7,8 @@ const Cart = require('../models/cart');
 const mongoDB = 'mongodb+srv://dragon-straight:8910JQKA@cluster0-dqpzz.mongodb.net/e-commerce';
 var mongoose = require('mongoose');
 var async = require('async');
+const db = require('../models/index')
+const Pagination = require('../class/Pagination')
 
 exports.product_viewProductList_dec = async function(req, res) {
     //const list = productDao.get_PriceDec_Product_List();
@@ -19,20 +21,11 @@ exports.product_viewProductList_dec = async function(req, res) {
     page=parseInt(page);
     const numPageLink = 2;
 
-    const pageStart = page;
-    const prev=page-1 >0?page-1:1;
-    const next=page+1;
     const limit = 6;//
-    const offset = (page - 1) * limit;
 
-    const products = db.Product.find({isDeleted: false}).limit(limit).skip(offset).sort({price: -1});
-
-    const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
-    const nextPages = pageStart + numPageLink;
     const count = await db.Product.count({isDeleted: false});//
-
-    const numPages = Math.ceil(count / limit);
-    const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;
+    const pagination = (new Pagination({page, limit, count, numPageLink})).get()
+    const products = db.Product.find({isDeleted: false}).limit(limit).skip(pagination.offset).sort({price: -1});
 
     res.render('product/list', {
         pageTitle: 'Danh sách sản phẩm',
@@ -40,13 +33,7 @@ exports.product_viewProductList_dec = async function(req, res) {
         manufacturerList: await manufacturer,
         categoryList: await category,
         curCustomer: req.user,
-        prev:prev,
-        next:next,
-        prevPages:prevPages,
-        nextPages:nextPages,
-        numPages:numPages,
-        pageStart:pageStart,
-        pageEnd:pageEnd,
+        ...pagination,
         count:count,
         url: url
     });
@@ -63,20 +50,12 @@ exports.product_viewProductList_asc = async function(req, res) {
     page=parseInt(page);
     const numPageLink = 2;
 
-    const pageStart = page;
-    const prev=page-1 >0?page-1:1;
-    const next=page+1;
     const limit = 3;
     const offset = (page - 1) * limit;
 
-    const products = Product.find({isDeleted: false}).limit(limit).skip(offset).sort({price: 1});
-
-    const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
-    const nextPages = pageStart + numPageLink;
-    const count = await Product.count({isDeleted: false});
-
-    const numPages = Math.ceil(count / limit);
-    const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;
+    const count = await db.Product.count({isDeleted: false});
+    const pagination = (new Pagination({page, limit, count, numPageLink})).get()
+    const products = db.Product.find({isDeleted: false}).limit(limit).skip(pagination.offset).sort({price: 1});
 
 
     res.render('product/list', {
@@ -85,13 +64,7 @@ exports.product_viewProductList_asc = async function(req, res) {
         manufacturerList: await manufacturer,
         categoryList: await category,
         curCustomer: req.user,
-        prev:prev,
-        next:next,
-        prevPages:prevPages,
-        nextPages:nextPages,
-        numPages:numPages,
-        pageStart:pageStart,
-        pageEnd:pageEnd,
+        ...pagination,
         count:count,
         url: url
     });
@@ -109,21 +82,12 @@ exports.product_viewByManufacturer_dec = async function(req, res) {
     let page = req.query.page || 1;
     page=parseInt(page);
     const numPageLink = 2;
-    const prev=page-1 >0?page-1:1;
-    const next=page+1;
-    const pageStart = page;
 
     const limit = 3;
-    const offset = (page - 1) * limit;
 
-    const products = Product.find({isDeleted: false, manufacturer: req.params.id}).limit(limit).skip(offset).sort({price: -1});
-
-    const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
-    const nextPages = pageStart + numPageLink;
-    const count = await Product.count({isDeleted: false, manufacturer: req.params.id});
-
-    const numPages = Math.ceil(count / limit);
-    const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;
+    const count = await db.Product.count({isDeleted: false, manufacturer: req.params.id});
+    const pagination = (new Pagination({page, limit, count, numPageLink})).get()
+    const products = Product.find({isDeleted: false, manufacturer: req.params.id}).limit(limit).skip(pagination.offset).sort({price: -1});
 
     res.render('product/list', {
         pageTitle: 'Danh sách sản phẩm' ,
@@ -132,13 +96,7 @@ exports.product_viewByManufacturer_dec = async function(req, res) {
         manufacturerList: await manufacturer,
         categoryList: await category,
         curCustomer: req.user,
-        prev:prev,
-        next:next,
-        prevPages:prevPages,
-        nextPages:nextPages,
-        numPages:numPages,
-        pageStart:pageStart,
-        pageEnd:pageEnd,       
+        ...pagination,
          count:count,
         url: url
     });
@@ -157,20 +115,11 @@ exports.product_viewByCategory_dec = async function(req, res) {
     page=parseInt(page);
     const numPageLink = 2;
 
-    const pageStart = page;
-    const prev=page-1 >0?page-1:1;
-    const next=page+1;
     const limit = 3;
-    const offset = (page - 1) * limit;
-
-    const products = Product.find({isDeleted: false, category: req.params.id}).limit(limit).skip(offset).sort({price: -1});
-
-    const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
-    const nextPages = pageStart + numPageLink;
-    const count = await Product.count({isDeleted: false, category: req.params.id});
-
-    const numPages = Math.ceil(count / limit);
-    const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;
+   
+    const count = await db.Product.count({isDeleted: false, category: req.params.id});
+    const pagination = (new Pagination({page, limit, count, numPageLink})).get()
+    const products = Product.find({isDeleted: false, category: req.params.id}).limit(limit).skip(pagination.offset).sort({price: -1});
 
     res.render('product/list', {
         pageTitle: 'Danh sách sản phẩm',
@@ -179,13 +128,7 @@ exports.product_viewByCategory_dec = async function(req, res) {
         manufacturerList: await manufacturer,
         categoryList: await category,
         curCustomer: req.user,
-        prev:prev,
-        next:next,
-        prevPages:prevPages,
-        nextPages:nextPages,
-        numPages:numPages,
-        pageStart:pageStart,
-        pageEnd:pageEnd,
+        ...pagination,
         count:count,
         url: url
     });
@@ -203,20 +146,11 @@ exports.product_viewByManufacturer_asc = async function(req, res) {
     page=parseInt(page);
     const numPageLink = 2;
 
-    const pageStart = page;
-    const prev=page-1 >0?page-1:1;
-    const next=page+1;
     const limit = 3;
-    const offset = (page - 1) * limit;
 
-    const products = Product.find({isDeleted: false, manufacturer: req.params.id}).limit(limit).skip(offset).sort({price: 1});
-
-    const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
-    const nextPages = pageStart + numPageLink;
-    const count = await Product.count({isDeleted: false, manufacturer: req.params.id});
-
-    const numPages = Math.ceil(count / limit);
-    const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;
+    const count = await db.Product.count({isDeleted: false, manufacturer: req.params.id});
+    const pagination = (new Pagination({page, limit, count, numPageLink})).get()
+    const products = Product.find({isDeleted: false, manufacturer: req.params.id}).limit(limit).skip(pagination.offset).sort({price: 1});
 
     res.render('product/list', {
         pageTitle: 'Danh sách sản phẩm' ,
@@ -225,13 +159,7 @@ exports.product_viewByManufacturer_asc = async function(req, res) {
         manufacturerList: await manufacturer,
         categoryList: await category,
         curCustomer: req.user,
-        prev:prev,
-        next:next,
-        prevPages:prevPages,
-        nextPages:nextPages,
-        numPages:numPages,
-        pageStart:pageStart,
-        pageEnd:pageEnd,
+        ...pagination,
         count:count,
         url: url
     });
@@ -249,20 +177,11 @@ exports.product_viewByCategory_asc = async function(req, res) {
     page=parseInt(page);
     const numPageLink = 2;
 
-    const pageStart = page;
-    const prev=page-1 >0?page-1:1;
-    const next=page+1;
     const limit = 3;
-    const offset = (page - 1) * limit;
 
-    const products = Product.find({isDeleted: false, category: req.params.id}).limit(limit).skip(offset).sort({price: 1});
-
-    const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
-    const nextPages = pageStart + numPageLink;
-    const count = await Product.count({isDeleted: false, category: req.params.id});
-
-    const numPages = Math.ceil(count / limit);
-    const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;
+    const count = await db.Product.count({isDeleted: false, category: req.params.id})
+    const pagination = (new Pagination({page, limit, count, numPageLink})).get()
+    const products = Product.find({isDeleted: false, category: req.params.id}).limit(limit).skip(pagination.offset).sort({price: 1});
 
     res.render('product/list', {
         pageTitle: 'Danh sách sản phẩm',
@@ -271,13 +190,7 @@ exports.product_viewByCategory_asc = async function(req, res) {
         manufacturerList: await manufacturer,
         categoryList: await category,
         curCustomer: req.user,
-        prev:prev,
-        next:next,
-        prevPages:prevPages,
-        nextPages:nextPages,
-        numPages:numPages,
-        pageStart:pageStart,
-        pageEnd:pageEnd,
+        ...pagination,
         count:count,
         url: url
     });
@@ -410,7 +323,7 @@ exports.product_addToCart = async function(req, res) {
 exports.product_removeFromCart = async function(req, res) {
     var productId = req.params.id;
     var cart = new Cart(req.session.cart ? req.session.cart : {items:{}});
-    var productRemoved = await Product.findById(productId);
+    var productRemoved = await db.Product.findById(productId);
 
 
     productRemoved.size = req.body.removeSize;
@@ -433,22 +346,11 @@ exports.product_viewProduct = async function(req, res)
     page=parseInt(page);
     const numPageLink = 2;
 
-    const pageStart = page;
-    const prev=page-1 >0?page-1:1;
-    const next=page+1;
     const limit = 3;
-    const offset = (page - 1) * limit;
 
-    const comments = Comment.find({product:productInfo._id}).limit(limit).skip(offset).sort({price: 1});
-
-    const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
-    const nextPages = pageStart + numPageLink;
-    const count = await Comment.count({product:productInfo._id});
-
-    const numPages = Math.ceil(count / limit);
-    const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;
-
- 
+    const count = await db/Comment.count({product:productInfo._id});
+    const pagination = (new Pagination({page, limit, count, numPageLink})).get()
+    const comments = db.Comment.find({product:productInfo._id}).limit(limit).skip(pagination.offset).sort({price: 1}); 
 
     res.render('product/single-product', {
         pageTitle: productInfo.name,
@@ -459,13 +361,7 @@ exports.product_viewProduct = async function(req, res)
         curCustomer: req.user,
         comments:await comments,
         count:count,
-        prev:prev,
-        next:next,
-        prevPages:prevPages,
-        nextPages:nextPages,
-        numPages:numPages,
-        pageStart:pageStart,
-        pageEnd:pageEnd,
+        ...pagination,
         url: url
     });
 };

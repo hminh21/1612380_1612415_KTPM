@@ -16,36 +16,17 @@ exports.user_list= async function(req,res)
     let page = req.query.page || 1;
     page=parseInt(page);
      const numPageLink = 2;
-
-    // const pageStart = page;
-    // const prev=page-1 >0?page-1:1;
-    // const next=page+1;
      const limit = 5;
-    // const offset = (page - 1) * limit;
     const count = await db.Customer.count({});
 
     const pagination = (new Pagination({page, limit, count, numPageLink})).get()
     const customers = db.Customer.find({}).limit(limit).skip(pagination.offset);
-
-    // const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
-    // const nextPages = pageStart + numPageLink;
-    
-
-    // const numPages = Math.ceil(count / limit);
-    // const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;
 
     res.render('users/list',
         {
             pageTitle: 'Danh sách tài khoản',
             customerList: await customers,
             nameAdmin: name,
-            // prev:prev,
-            // next:next,
-            // prevPages:prevPages,
-            // nextPages:nextPages,
-            // numPages:numPages,
-            // pageStart:pageStart,
-            // pageEnd:pageEnd,
             ...pagination,
             url: url
         });
