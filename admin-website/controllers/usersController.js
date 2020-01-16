@@ -5,6 +5,8 @@ var mongoose = require('mongoose');
 var async = require('async');
 const randomstring= require('randomstring');
 const sendMail=require('../misc/mailer');
+const db = require('../models/index')
+const Pagination = require('../class/Pagination')
 
 exports.user_list= async function(req,res)
 {
@@ -13,35 +15,38 @@ exports.user_list= async function(req,res)
 
     let page = req.query.page || 1;
     page=parseInt(page);
-    const numPageLink = 2;
+     const numPageLink = 2;
 
-    const pageStart = page;
-    const prev=page-1 >0?page-1:1;
-    const next=page+1;
-    const limit = 5;
-    const offset = (page - 1) * limit;
+    // const pageStart = page;
+    // const prev=page-1 >0?page-1:1;
+    // const next=page+1;
+     const limit = 5;
+    // const offset = (page - 1) * limit;
+    const count = await db.Customer.count({});
 
-    const customers = Customer.find({}).limit(limit).skip(offset);
+    const pagination = (new Pagination({page, limit, count, numPageLink})).get()
+    const customers = db.Customer.find({}).limit(limit).skip(pagination.offset);
 
-    const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
-    const nextPages = pageStart + numPageLink;
-    const count = await Customer.count({});
+    // const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
+    // const nextPages = pageStart + numPageLink;
+    
 
-    const numPages = Math.ceil(count / limit);
-    const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;
+    // const numPages = Math.ceil(count / limit);
+    // const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;
 
     res.render('users/list',
         {
             pageTitle: 'Danh sách tài khoản',
             customerList: await customers,
             nameAdmin: name,
-            prev:prev,
-            next:next,
-            prevPages:prevPages,
-            nextPages:nextPages,
-            numPages:numPages,
-            pageStart:pageStart,
-            pageEnd:pageEnd,
+            // prev:prev,
+            // next:next,
+            // prevPages:prevPages,
+            // nextPages:nextPages,
+            // numPages:numPages,
+            // pageStart:pageStart,
+            // pageEnd:pageEnd,
+            ...pagination,
             url: url
         });
 };
@@ -98,7 +103,17 @@ exports.user_update_get = async function(req,res) {
     });
 };
 exports.user_update_post = function(req,res,next) {
-    var customer = new Customer({
+    // var customer = new Customer({
+    //     _id: req.params.id,
+    //     username: req.body.username,
+    //     email: req.body.email,
+    //     info: {
+    //         name: req.body.name,
+    //         address: req.body.address,
+    //         sdt: req.body.sdt
+    //     }
+    // });
+    db.Customer.create({
         _id: req.params.id,
         username: req.body.username,
         email: req.body.email,
@@ -107,16 +122,16 @@ exports.user_update_post = function(req,res,next) {
             address: req.body.address,
             sdt: req.body.sdt
         }
-    });
+    })
     //customer.password=customer.generateHash(req.body.password);
-    Customer.findByIdAndUpdate(req.params.id,customer,{},function(err){
+    db.Customer.findByIdAndUpdate(req.params.id,customer,{},function(err){
         if(err){return next(err);}
         res.redirect('../list');
     })
 };
 
 exports.user_delete = function(req,res){
-    Customer.findByIdAndRemove(req.params.id,function (err) {
+    db.Customer.findByIdAndRemove(req.params.id,function (err) {
         if(err){return next(err);}
         res.redirect("../list");
     })

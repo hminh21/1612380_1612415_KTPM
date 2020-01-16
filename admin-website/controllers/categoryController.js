@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const mongoDB = 'mongodb+srv://dragon-straight:8910JQKA@cluster0-dqpzz.mongodb.net/e-commerce';
 const Category = require('../models/category');
 const productDao = require('../models/dao/productDao');
-
+const db = require('../models/index')
 
 exports.category_list= async function(req,res)
 {
@@ -35,39 +35,54 @@ function add(req,res){
             throw error;
     
         console.log('Successfully connected');
-    let mvcCategory = new Category({
+    // let mvcCategory = new Category({
+    //     _id: new mongoose.Types.ObjectId(),
+    //     name: req.body.name,
+    //     isDeleted: 0,
+    // });
+
+    // mvcCategory.save(function(error){
+    //     if(error) throw error;
+    //     res.redirect('list');
+    // });  
+    db.Category.create({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
-        isDeleted: 0,
-    });
-
-    mvcCategory.save(function(error){
-        if(error) throw error;
-        res.redirect('list');
-    });  
+        isDeleted: 0
+    })
 })}
 
 function update(req,res)
-{   mongoose.connect(mongoDB, function(error){
+{   
+    mongoose.connect(mongoDB, function(error){
     if(error)
         throw error;
 
     console.log('Successfully connected');
-    let mvcCategory =Category.findById(req.body._id);
-    mvcCategory.name= req.body.name,
-    mvcCategory.isDeleted= 0,
+    // let mvcCategory =Category.findById(req.body._id);
+    // mvcCategory.name= req.body.name,
+    // mvcCategory.isDeleted= 0,
 
 
-    mvcCategory.save(function(error){
-    if(error) throw error;
-    res.redirect('list');
-});  
+    // mvcCategory.save(function(error){
+    // if(error) throw error;
+    // res.redirect('list');
+    // });
+
+    db.Category.findByIdAndUpdate(req.body._id, {
+        name: req.body.name,
+        isDeleted: false
+    }, err => {
+        if (err) throw err
+        res.redirect('list');
+    })
+
 })}
 
 exports.category_edit= async function(req,res)
 {
     const name = req.user.info.name;
-    const category=  Category.findById(req.params.id);
+    const category=  db.Category.findById(req.params.id);
             res.render('category/add',{
                 pageTitle:"Chỉnh sửa thông tin",
                 category:  await category,
@@ -77,7 +92,7 @@ exports.category_edit= async function(req,res)
 
 exports.category_edit_post= function(req,res)
 {
-    Category.findByIdAndUpdate(req.body._id,req.body,(err)=>{
+    db.Category.findByIdAndUpdate(req.body._id,req.body,(err)=>{
         if (!err)
         res.redirect('list');
     }) 
@@ -85,7 +100,7 @@ exports.category_edit_post= function(req,res)
 
 exports.category_delete=function(req,res)
 {
-    Category.findByIdAndRemove(req.params.id, function (err){
+    db.Category.findByIdAndRemove(req.params.id, function (err){
         if (!err)
         res.redirect('../list');
     })

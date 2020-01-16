@@ -15,21 +15,21 @@ exports.product_viewProductList_dec = async function(req, res) {
 
     const url = '/productList';
 
-    let page = req.query.page || 1;
+    let page = req.query.page || 1;//
     page=parseInt(page);
     const numPageLink = 2;
 
     const pageStart = page;
     const prev=page-1 >0?page-1:1;
     const next=page+1;
-    const limit = 6;
+    const limit = 6;//
     const offset = (page - 1) * limit;
 
-    const products = Product.find({isDeleted: false}).limit(limit).skip(offset).sort({price: -1});
+    const products = db.Product.find({isDeleted: false}).limit(limit).skip(offset).sort({price: -1});
 
     const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
     const nextPages = pageStart + numPageLink;
-    const count = await Product.count({isDeleted: false});
+    const count = await db.Product.count({isDeleted: false});//
 
     const numPages = Math.ceil(count / limit);
     const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;

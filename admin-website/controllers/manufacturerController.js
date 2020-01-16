@@ -3,7 +3,7 @@ const mongoDB = 'mongodb+srv://dragon-straight:8910JQKA@cluster0-dqpzz.mongodb.n
 
 const Manufacturer = require('../models/manufacturer');
 const productDao = require('../models/dao/productDao');
-
+const db = require('../models/index')
 
 exports.manufacturer_list=async function(req,res)
 {
@@ -36,23 +36,32 @@ function add(req,res){
             throw error;
     
         console.log('Successfully connected');
-    let mvcManufacturer = new Manufacturer({
+    // let mvcManufacturer = new Manufacturer({
+    //     _id: new mongoose.Types.ObjectId(),
+    //     name: req.body.name,
+    //     isDeleted: 0,
+    //     img: '/img/'+req.body.img
+    // });
+
+    // mvcManufacturer.save(function(error){
+    //     if(error) throw error;
+    //     res.redirect('list');
+    // });
+    db.Manufacturer.create({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         isDeleted: 0,
         img: '/img/'+req.body.img
-    });
-
-    mvcManufacturer.save(function(error){
-        if(error) throw error;
+    }, err => {
+        if (err) throw err;
         res.redirect('list');
-    });  
+    })
 })}
 
 exports.manufacturer_edit= function(req,res)
 {
     const name = req.user.info.name;
-     Manufacturer.findById(req.params.id,(err,doc)=> {
+     db.Manufacturer.findById(req.params.id,(err,doc)=> {
         if (!err)
         {
             res.render('manufacturer/add',{
@@ -66,7 +75,7 @@ exports.manufacturer_edit= function(req,res)
 
 exports.manufacturer_edit_post= function(req,res)
 {
-     Manufacturer.findByIdAndUpdate(req.body._id,req.body,(err)=> {
+     db.Manufacturer.findByIdAndUpdate(req.body._id,req.body,(err)=> {
         if (!err)
         {
            res.redirect('list');
@@ -75,7 +84,7 @@ exports.manufacturer_edit_post= function(req,res)
 };
 exports.manufacturer_delete=function(req,res)
 {
-    Manufacturer.findByIdAndRemove(req.params.id, function (err){
+    db.Manufacturer.findByIdAndRemove(req.params.id, function (err){
         if (!err)
         res.redirect('../list');
     })

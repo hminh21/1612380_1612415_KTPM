@@ -2,6 +2,8 @@ const orderDao = require('../models/dao/orderDao');
 const Order = require('../models/order');
 const Cart = require('../models/cart');
 const mongoose = require('mongoose');
+const db = require('../models/index')
+
 exports.order_list= async function(req,res)
 {
     const name = req.user.info.name;
@@ -19,10 +21,10 @@ exports.order_list= async function(req,res)
     const limit = 5;
     const offset = (page - 1) * limit;
 
-    const orders = await Order.find().limit(limit).skip(offset).sort({created:-1});
+    const orders = await db.Order.find().limit(limit).skip(offset).sort({created:-1});
     const prevPages = pageStart - numPageLink > 0 ? pageStart - numPageLink : 1;
     const nextPages = pageStart + numPageLink;
-    const count = await Order.count();
+    const count = await db.Order.count();
 
     const numPages = Math.ceil(count / limit);
     const pageEnd = page + numPageLink < numPages ? page + numPageLink : numPages;

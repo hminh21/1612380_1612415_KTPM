@@ -3,6 +3,7 @@ const mongoDB = 'mongodb+srv://dragon-straight:8910JQKA@cluster0-dqpzz.mongodb.n
 var async = require('async');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const db = require('../models/index')
 
 const Admin = require('../models/admin');
 const adminDao = require('../models/dao/adminDao');
@@ -56,23 +57,34 @@ exports.admin_register_post= function(req,res)
                   position: position
               }
           });
-  
-          bcrypt.genSalt(10, (err, salt) => {
-            bcrypt.hash(newAdmin.password, salt, (err, hash) => {
-              if (err) throw err;
-              newAdmin.password = hash;
-              newAdmin
-                .save()
-                .then(admin => {
-                  req.flash(
-                    'success_msg',
-                    'Bạn đã đăng ký thành công và có thể đăng nhập lúc này'
-                  );
-                  res.redirect('/admin/login');
-                })
-                .catch(err => console.log(err));
+          db.Admin.create({
+            email: email,
+            password,
+            info:{
+                name: name,
+                address: address,
+                sdt: phone,
+                position: position
+            }
+          }, (err, admin) => {
+            if (err) throw err
+            bcrypt.genSalt(10, (err, salt) => {
+              bcrypt.hash(admin.password, salt, (err, hash) => {
+                if (err) throw err;
+                admin.password = hash;
+                admin
+                  .save()
+                  .then(admin => {
+                    req.flash(
+                      'success_msg',
+                      'Bạn đã đăng ký thành công và có thể đăng nhập lúc này'
+                    );
+                    res.redirect('/admin/login');
+                  })
+                  .catch(err => console.log(err));
+              });
             });
-          });
+          })
         }
       });
     }
@@ -81,7 +93,7 @@ exports.admin_register_post= function(req,res)
 exports.admin_check_email_available = async (req, res) =>{
 
     let check = {isAvailable: false};
-    const foundEmail = await Admin.findOne({email: req.body.email});
+    const foundEmail = await db.Admin.findOne({email: req.body.email});
 
     if(foundEmail)
     {
@@ -146,7 +158,7 @@ exports.admin_update_post = async function(req, res){
     if(adminInfo == null)
         res.status(404).send();
 
-    const foundEmail = await Admin.findOne({email: req.body.email});
+    const foundEmail = await db.Admin.findOne({email: req.body.email});
 
     if(foundEmail && foundEmail._id.toString() != adminInfo._id.toString())
     {

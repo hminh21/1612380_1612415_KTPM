@@ -1,6 +1,7 @@
 const productDao = require('../models/dao/productDao');
 const Product = require('../models/product');
 const Order=require('../models/order');
+const db = require('../models/index')
 
 exports.report_item = async (req,res) =>
 {
@@ -21,7 +22,7 @@ exports.report_item = async (req,res) =>
         const lastDay=new Date(2019,month[i]-1,31)
         firstDayinMonth.push(firstDay);
         lastDayinMonth.push(lastDay);
-        const order=await Order.find({created:{$gte:firstDay,$lte: lastDay}})
+        const order=await db.Order.find({created:{$gte:firstDay,$lte: lastDay}})
         let sumTotalPrice=0;
         let monthOrder=0;
         orderList[i]=order;
